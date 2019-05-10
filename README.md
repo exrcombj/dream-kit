@@ -26,3 +26,9 @@ mvn archetype:generate -DgroupId=com.exrcom.dream.kit -DartifactId=dream-kit -Da
 
 https://travis-ci.org/exrcombj/dream-kit
 
+## deploy to maven repo
+```bash
+mvn clean deploy
+// this only use for exrcom dev
+```
+
