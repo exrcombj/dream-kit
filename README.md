@@ -22,3 +22,7 @@ it's java utils tool lib
 mvn archetype:generate -DgroupId=com.exrcom.dream.kit -DartifactId=dream-kit -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
+## travis ci
+
+https://travis-ci.org/exrcombj/dream-kit
+
