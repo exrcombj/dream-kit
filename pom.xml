@@ -91,7 +91,7 @@
           <merge>true</merge>
           <includes><include>**/*</include></includes>
           <repositoryName>maven-repo</repositoryName>
-          <repositoryOwner>exrcom</repositoryOwner>
+          <repositoryOwner>yrenmisc</repositoryOwner>
           <server>github</server>
         </configuration>
         <executions>
