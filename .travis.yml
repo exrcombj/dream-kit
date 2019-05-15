@@ -1,1 +1,6 @@
 language: java
+
+notifications:
+  slack:
+    rooms:
+    - exrcom:SDETqVaFBO6nWx9RXjOY5pUf#build-status
