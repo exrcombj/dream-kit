@@ -20,5 +20,8 @@ public class BooleanUtilTest {
         assertThat(BooleanUtil.toBooleanObject("TruE")).isTrue();
         assertThat(BooleanUtil.toBooleanObject("T")).isFalse();
         assertThat(BooleanUtil.toBooleanObject(null)).isNull();
+
+        assertThat(BooleanUtil.toBooleanObject(null, true)).isTrue();
+        assertThat(BooleanUtil.toBooleanObject(null, false)).isFalse();
     }
 }
