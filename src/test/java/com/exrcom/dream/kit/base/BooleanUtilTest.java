@@ -24,4 +24,31 @@ public class BooleanUtilTest {
         assertThat(BooleanUtil.toBooleanObject(null, true)).isTrue();
         assertThat(BooleanUtil.toBooleanObject(null, false)).isFalse();
     }
+
+    @Test
+    public void testParseString() {
+        assertThat(BooleanUtil.parseString("true")).isTrue();
+        assertThat(BooleanUtil.parseString("ON")).isTrue();
+        assertThat(BooleanUtil.parseString("yes")).isTrue();
+        assertThat(BooleanUtil.parseString("y")).isTrue();
+        assertThat(BooleanUtil.parseString("t")).isTrue();
+
+        assertThat(BooleanUtil.parseString("false")).isFalse();
+        assertThat(BooleanUtil.parseString("OFF")).isFalse();
+        assertThat(BooleanUtil.parseString("NO")).isFalse();
+
+        assertThat(BooleanUtil.parseString("")).isNull();
+        assertThat(BooleanUtil.parseString("abc")).isNull();
+        assertThat(BooleanUtil.parseString(null)).isNull();
+
+    }
+
+    @Test
+    public void testParseStringWithDefault() {
+        assertThat(BooleanUtil.parseString("true", Boolean.FALSE)).isTrue();
+        assertThat(BooleanUtil.parseString("false", Boolean.TRUE)).isFalse();
+
+        assertThat(BooleanUtil.parseString("", Boolean.TRUE)).isTrue();
+        assertThat(BooleanUtil.parseString("abc", Boolean.FALSE)).isFalse();
+    }
 }
