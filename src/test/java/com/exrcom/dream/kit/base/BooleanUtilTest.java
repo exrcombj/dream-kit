@@ -51,4 +51,23 @@ public class BooleanUtilTest {
         assertThat(BooleanUtil.parseString("", Boolean.TRUE)).isTrue();
         assertThat(BooleanUtil.parseString("abc", Boolean.FALSE)).isFalse();
     }
+
+    @Test
+    public void testNegate() {
+        assertThat(BooleanUtil.negate(Boolean.TRUE)).isFalse();
+        assertThat(BooleanUtil.negate(Boolean.FALSE)).isTrue();
+    }
+
+    @Test
+    public void testAnd() {
+        assertThat(BooleanUtil.and(true, true, false)).isFalse();
+        assertThat(BooleanUtil.and(true, true)).isTrue();
+    }
+
+    public void testOr() {
+        assertThat(BooleanUtil.or(false, false, true)).isTrue();
+        assertThat(BooleanUtil.or(false, false)).isFalse();
+    }
+
+
 }
