@@ -16,6 +16,7 @@
     <junit.version>4.12</junit.version>
     <assertj.version>2.6.0</assertj.version>
     <slf4j.version>1.7.25</slf4j.version>
+    <logback.version>1.2.3</logback.version>
 
     <!-- use github as maven repo -->
     <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
@@ -68,6 +69,13 @@
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>${assertj.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
       <scope>test</scope>
     </dependency>
 
