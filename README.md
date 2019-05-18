@@ -32,3 +32,11 @@ mvn clean deploy
 // this only use for exrcom dev
 ```
 
+## jacoco plugin, maven ut test coverage report
+add jacoco-maven-plugin
+
+```
+mvn test clean
+# find ut test coverage report in ./target/site/jacoco/index.html
+```
+

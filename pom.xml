@@ -23,6 +23,9 @@
     <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
     <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
 
+    <!-- UT test coverage report -->
+    <jacoco-maven-plugin.vesion>0.8.4</jacoco-maven-plugin.vesion>
+
     <!-- plugin properties -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -145,7 +148,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.4</version>
+        <version>${jacoco-maven-plugin.vesion}</version>
         <executions>
           <execution>
             <goals>
