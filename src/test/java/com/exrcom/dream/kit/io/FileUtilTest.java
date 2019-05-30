@@ -1,6 +1,5 @@
 package com.exrcom.dream.kit.io;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,5 +11,10 @@ public class FileUtilTest {
     public void testCreateTempFile() throws IOException {
         Path tempFile = FileUtil.createTempFile();
         System.out.printf("file name: %s", tempFile.toFile().getName());
+    }
+
+    @Test
+    public void testToByteArray() throws IOException {
+
     }
 }
