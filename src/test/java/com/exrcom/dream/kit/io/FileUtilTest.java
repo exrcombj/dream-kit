@@ -1,7 +1,9 @@
 package com.exrcom.dream.kit.io;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -17,4 +19,18 @@ public class FileUtilTest {
     public void testToByteArray() throws IOException {
 
     }
+
+    @Test
+    public void testWrite() throws IOException {
+    	File file = FileUtil.createTempFile().toFile();
+    	try {
+    		String data = "hello exrcom";
+    		FileUtil.write(data, file);
+    		String result = FileUtil.toString(file);
+			Assertions.assertThat(result).isEqualTo(data);
+		} finally {
+    		//TODO delete temp file
+		}
+
+	}
 }
