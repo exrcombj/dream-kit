@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class FileUtil {
 
@@ -29,4 +30,11 @@ public class FileUtil {
     public static String toString(final File file) throws IOException {
         return com.google.common.io.Files.asCharSource(file, Charsets.UTF_8).read();
     }
+
+	/**
+	 * 读取文件内容到 List<String>
+	 */
+	public static List<String> toLines(final File file) throws IOException {
+		return Files.readAllLines(file.toPath(), Charsets.UTF_8);
+	}
 }
