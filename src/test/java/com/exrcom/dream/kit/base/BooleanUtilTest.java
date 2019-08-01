@@ -10,9 +10,9 @@ public class BooleanUtilTest {
     @Test
     public void booleanUtilTest() {
         assertThat(BooleanUtil.toBoolean("true")).isTrue();
-        assertThat(BooleanUtil.toBoolean("TruE")).isTrue();
+        assertThat(BooleanUtil.toBoolean("TRUE")).isTrue();
         assertThat(BooleanUtil.toBoolean("false")).isFalse();
-        assertThat(BooleanUtil.toBoolean("FalsE")).isFalse();
+        assertThat(BooleanUtil.toBoolean("FALSE")).isFalse();
         assertThat(BooleanUtil.toBoolean("abc")).isFalse();
         assertThat(BooleanUtil.toBoolean(null)).isFalse();
 
