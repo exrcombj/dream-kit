@@ -16,13 +16,13 @@ public class BooleanUtilTest {
         assertThat(BooleanUtil.toBoolean("abc")).isFalse();
         assertThat(BooleanUtil.toBoolean(null)).isFalse();
 
-        assertThat(BooleanUtil.toBooleanObject("true")).isTrue();
-        assertThat(BooleanUtil.toBooleanObject("TruE")).isTrue();
-        assertThat(BooleanUtil.toBooleanObject("T")).isFalse();
+        assertThat(BooleanUtil.toBooleanObject("true")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.toBooleanObject("TruE")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.toBooleanObject("T")).isEqualTo(Boolean.FALSE);
         assertThat(BooleanUtil.toBooleanObject(null)).isNull();
 
-        assertThat(BooleanUtil.toBooleanObject(null, true)).isTrue();
-        assertThat(BooleanUtil.toBooleanObject(null, false)).isFalse();
+        assertThat(BooleanUtil.toBooleanObject(null, true)).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.toBooleanObject(null, false)).isEqualTo(Boolean.FALSE);
     }
 
     @Test
