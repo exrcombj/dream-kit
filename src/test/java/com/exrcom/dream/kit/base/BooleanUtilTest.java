@@ -27,15 +27,17 @@ public class BooleanUtilTest {
 
     @Test
     public void testParseString() {
-        assertThat(BooleanUtil.parseString("true")).isTrue();
-        assertThat(BooleanUtil.parseString("ON")).isTrue();
-        assertThat(BooleanUtil.parseString("yes")).isTrue();
-        assertThat(BooleanUtil.parseString("y")).isTrue();
-        assertThat(BooleanUtil.parseString("t")).isTrue();
+        assertThat(BooleanUtil.parseString("true")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.parseString("ON")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.parseString("yes")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.parseString("y")).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.parseString("t")).isEqualTo(Boolean.TRUE);
 
-        assertThat(BooleanUtil.parseString("false")).isFalse();
-        assertThat(BooleanUtil.parseString("OFF")).isFalse();
-        assertThat(BooleanUtil.parseString("NO")).isFalse();
+        assertThat(BooleanUtil.parseString("false")).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.parseString("OFF")).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.parseString("NO")).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.parseString("n")).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.parseString("f")).isEqualTo(Boolean.FALSE);
 
         assertThat(BooleanUtil.parseString("")).isNull();
         assertThat(BooleanUtil.parseString("abc")).isNull();
