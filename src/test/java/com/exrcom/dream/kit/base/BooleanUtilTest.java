@@ -47,8 +47,9 @@ public class BooleanUtilTest {
 
     @Test
     public void testParseStringWithDefault() {
-        assertThat(BooleanUtil.parseString("true", Boolean.FALSE)).isTrue();
-        assertThat(BooleanUtil.parseString("false", Boolean.TRUE)).isFalse();
+        assertThat(BooleanUtil.parseString("true", Boolean.FALSE)).isEqualTo(Boolean.TRUE);
+        assertThat(BooleanUtil.parseString("mm", Boolean.FALSE)).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.parseString("mm", Boolean.TRUE)).isEqualTo(Boolean.TRUE);
 
         assertThat(BooleanUtil.parseString("", Boolean.TRUE)).isTrue();
         assertThat(BooleanUtil.parseString("abc", Boolean.FALSE)).isFalse();
@@ -56,8 +57,8 @@ public class BooleanUtilTest {
 
     @Test
     public void testNegate() {
-        assertThat(BooleanUtil.negate(Boolean.TRUE)).isFalse();
-        assertThat(BooleanUtil.negate(Boolean.FALSE)).isTrue();
+        assertThat(BooleanUtil.negate(Boolean.TRUE)).isEqualTo(Boolean.FALSE);
+        assertThat(BooleanUtil.negate(Boolean.FALSE)).isEqualTo(Boolean.TRUE);
     }
 
     @Test
